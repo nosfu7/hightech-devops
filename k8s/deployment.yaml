@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flask-app
+  template:
+    metadata:
+      labels:
+        app: flask-app
+    spec:
+      containers:
+      - name: flask-app
+        # IMPORTANT: Remplacez cette ligne par votre image
+        # Pour l'instant, on utilise une astuce pour Minikube
+        image: hightech_app1:latest
+        imagePullPolicy: IfNotPresent # Dit à K8s de ne pas essayer de la télécharger
+        ports:
+        - containerPort: 5000
