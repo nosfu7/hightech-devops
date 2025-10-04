@@ -16,7 +16,7 @@ spec:
       - name: flask-app
         # IMPORTANT: Remplacez cette ligne par votre image
         # Pour l'instant, on utilise une astuce pour Minikube
-        image: hightech_app1:latest
+        image: nosfu/flask-app:latest
         imagePullPolicy: Always # Dit à K8s de ne pas essayer de la télécharger
         ports:
         - containerPort: 5000
